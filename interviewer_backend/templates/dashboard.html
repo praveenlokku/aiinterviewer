@@ -1,0 +1,145 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | AI Interviewer</title>
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <div class="noise-overlay"></div>
+    <div class="custom-cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <aside class="sidebar">
+        <a href="{% url 'home' %}" class="logo">AI.<span>Interviewer</span></a>
+
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#" class="nav-link active">
+                    <i data-lucide="layout-dashboard"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i data-lucide="history"></i>
+                    <span>Sessions</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i data-lucide="bar-chart-2"></i>
+                    <span>Analytics</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i data-lucide="settings"></i>
+                    <span>Settings</span>
+                </a>
+            </li>
+        </ul>
+
+        <div class="user-profile">
+            <div class="avatar"></div>
+            <div class="user-info">
+                <span class="name">Praveen</span>
+                <span class="status">Premium Plan</span>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="header">
+            <div class="welcome-text">
+                <h1>Welcome back, Praveen</h1>
+                <p>Ready for your next practice session?</p>
+            </div>
+            <div class="header-actions">
+                <button class="nav-link"><i data-lucide="bell"></i></button>
+            </div>
+        </header>
+
+        <div class="dashboard-grid">
+            <div class="card quick-action-card reveal">
+                <div class="action-content">
+                    <h2>Start a mock interview</h2>
+                    <p>Select your target company and role to begin a realistic AI-powered practice session with emotion
+                        detection.</p>
+                    <a href="#" class="btn-primary">
+                        <i data-lucide="play"></i>
+                        Start New Session
+                    </a>
+                </div>
+                <div class="action-visual">
+                    <!-- Dynamic visual or illustration placeholder -->
+                    <i data-lucide="cpu" style="width: 80px; height: 80px; opacity: 0.1; color: var(--slate);"></i>
+                </div>
+            </div>
+
+            <div class="card stats-card reveal delay-100">
+                <span class="stat-label">Average Confidence</span>
+                <div class="stat-value">84%</div>
+                <p class="stat-change">+4% from last week</p>
+            </div>
+
+            <div class="card stats-card reveal delay-200">
+                <span class="stat-label">Sessions Completed</span>
+                <div class="stat-value">12</div>
+                <p class="stat-change">Top 5% of candidates</p>
+            </div>
+
+            <div class="card stats-card reveal delay-300">
+                <span class="stat-label">AI Feedback Score</span>
+                <div class="stat-value">A-</div>
+                <p class="stat-change">Excellent progress</p>
+            </div>
+
+            <div class="card activity-card reveal delay-300">
+                <h2>Recent Sessions</h2>
+                <div class="activity-list">
+                    <div class="activity-item">
+                        <div class="activity-info">
+                            <div class="activity-icon"><i data-lucide="code-2"></i></div>
+                            <div class="activity-details">
+                                <strong>Technical Round - Google</strong>
+                                <span>2 days ago • Software Engineer role</span>
+                            </div>
+                        </div>
+                        <div class="activity-score">88%</div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-info">
+                            <div class="activity-icon"><i data-lucide="users"></i></div>
+                            <div class="activity-details">
+                                <strong>HR Mock Round - Meta</strong>
+                                <span>5 days ago • Product Manager role</span>
+                            </div>
+                        </div>
+                        <div class="activity-score">92%</div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-info">
+                            <div class="activity-icon"><i data-lucide="briefcase"></i></div>
+                            <div class="activity-details">
+                                <strong>System Design - Amazon</strong>
+                                <span>1 week ago • Senior Developer role</span>
+                            </div>
+                        </div>
+                        <div class="activity-score">76%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="{% static 'js/dashboard.js' %}"></script>
+    <script>lucide.createIcons();</script>
+</body>
+
+</html>

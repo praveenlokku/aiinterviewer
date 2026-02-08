@@ -1,0 +1,123 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up | AI Interviewer</title>
+    <meta name="description"
+        content="Create an account to practice company-specific technical, team lead and HR interviews with emotion detection and feedback.">
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="auth-page">
+    <div class="noise-overlay"></div>
+    <div class="custom-cursor"></div>
+    <div class="cursor-follower"></div>
+    <div class="auth-page-bg"></div>
+
+    <header class="auth-header">
+        <a href="{% url 'home' %}" class="auth-back">
+            <i data-lucide="arrow-left"></i>
+            <span>Home</span>
+        </a>
+        <a href="{% url 'home' %}" class="auth-logo">AI.<span>Interviewer</span></a>
+        <div class="auth-header-spacer"></div>
+    </header>
+
+    <main class="auth-main">
+        <div class="auth-card">
+            <h1 class="auth-title">
+                <span class="text-reveal"><span>Create</span></span> <span
+                    class="text-reveal"><span>account</span></span>
+            </h1>
+            <p class="auth-desc reveal-on-scroll delay-100">Start practicing for your target company. Free to start.</p>
+
+            <form id="signup-form" method="post" action="{%url 'Signup'%}" class="auth-form">
+                {% csrf_token %}
+                <div class="auth-field reveal-on-scroll delay-200">
+                    <label for="full-name">Full name</label>
+                    <input type="text" id="full-name" name="full-name" placeholder="John Doe" required>
+                </div>
+                <span class="auth-field-error" id="name-error"></span>
+
+                <div class="auth-field reveal-on-scroll delay-200">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                </div>
+                <span class="auth-field-error" id="email-error"></span>
+
+                <div class="auth-field-row reveal-on-scroll delay-300">
+                    <div class="auth-field">
+                        <label for="role">Role</label>
+                        <select id="role" name="role" required>
+                            <option value="" disabled selected>Select</option>
+                            <option value="software-engineer">Software Engineer</option>
+                            <option value="data-scientist">Data Scientist</option>
+                            <option value="product-manager">Product Manager</option>
+                            <option value="designer">Designer</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="auth-field">
+                        <label for="experience">Experience</label>
+                        <select id="experience" name="experience" required>
+                            <option value="" disabled selected>Select</option>
+                            <option value="student">Student</option>
+                            <option value="fresher">Fresher</option>
+                            <option value="1-3">1–3 years</option>
+                            <option value="3-5">3–5 years</option>
+                            <option value="5+">5+ years</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="auth-field reveal-on-scroll delay-300">
+                    <label for="target-company">Targeted companies <span class="auth-optional"></span></label>
+                    <input type="text" id="target-company" name="target-company" placeholder="e.g. Google, Meta">
+                </div>
+
+                <div class="auth-field reveal-on-scroll delay-400">
+                    <label for="password">Password</label>
+                    <div class="auth-password-wrap">
+                        <input type="password" id="password" name="password" placeholder="Min. 8 characters" required>
+                        <button type="button" class="auth-password-toggle" aria-label="Show password">
+                            <i data-lucide="eye"></i>
+                        </button>
+                    </div>
+                    <div class="auth-strength">
+                        <div class="auth-strength-bar"></div>
+                        <span class="auth-strength-text"></span>
+                    </div>
+                </div>
+
+                <div class="auth-field reveal-on-scroll delay-400">
+                    <label for="confirm-password">Confirm password</label>
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+                </div>
+                <span class="auth-field-error" id="confirm-error"></span>
+
+                <label class="auth-checkbox-block reveal-on-scroll delay-500">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <span>I agree to the <a href="#">Terms</a> and <a href="#">Privacy Policy</a></span>
+                </label>
+
+                <button type="submit" class="auth-btn reveal-on-scroll delay-500" id="submit-btn">
+                    <span class="btn-text">Create account</span>
+                    <div class="loader" style="display: none;"></div>
+                </button>
+            </form>
+
+            <p class="auth-footer">
+                Already have an account? <a href="{% url 'Login' %}">Log in</a>
+            </p>
+        </div>
+    </main>
+
+    <script src="{% static 'js/signup.js' %}"></script>
+    <script>lucide.createIcons();</script>
+</body>
+
+</html>

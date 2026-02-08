@@ -1,0 +1,197 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Interviewer | Practice for Technical, Team Lead & HR Rounds</title>
+    <meta name="description"
+        content="Prepare for your target company with AI mock interviews: technical, team lead, and HR rounds. Emotion detection and personalized feedback on strengths, weaknesses, and improvements.">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <div class="noise-overlay"></div>
+    <div class="custom-cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="{% url 'home' %}" class="logo">AI.<span>Interviewer</span></a>
+            <ul class="nav-links">
+                <li><a href="#features" class="nav-link">Features</a></li>
+                <li><a href="#how-it-works" class="nav-link">How it works</a></li>
+                <li><a href="#advantage" class="nav-link">Why AI?</a></li>
+                <li><a href="{% url 'Login' %}" class="btn btn-outline">Log in</a></li>
+                <li><a href="{% url 'Signup' %}" class="btn btn-primary">Get started</a></li>
+            </ul>
+            <button class="mobile-menu-btn" aria-label="Menu">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-bg"></div>
+        <div class="container">
+            <div class="hero-content">
+                <p class="badge animate-fade-in delay-100">
+                    <i data-lucide="sparkles" style="width:14px;height:14px;"></i>
+                    Technical · Team Lead · HR · <span>Emotion detection</span>
+                </p>
+                <h1 class="hero-title animate-slide-up delay-200">
+                    <span class="text-reveal"><span>Prepare</span></span> <span
+                        class="text-reveal"><span>for</span></span> <span class="text-reveal"><span>your</span></span>
+                    <br>
+                    <span class="text-reveal"><span>target</span></span> <span
+                        class="text-reveal"><span>company</span></span> <br>
+                    <span class="highlight text-reveal"><span>with AI.</span></span>
+                </h1>
+                <p class="hero-description animate-slide-up delay-300">
+                    Pick the company you're preparing for. Run technical, team lead, and HR interviews with live emotion
+                    detection—then get clear feedback on your strengths, weaknesses, and what to improve.
+                </p>
+                <div class="hero-actions animate-fade-in delay-400">
+                    <a href="{% url 'Signup' %}" class="btn btn-primary">
+                        Start free practice
+                        <i data-lucide="arrow-right" style="width:1.1rem;height:1.1rem;"></i>
+                    </a>
+                    <a href="{% url 'Login' %}" class="btn btn-outline">Log in</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="features" class="section">
+        <div class="container">
+            <div class="section-head">
+                <h2>Why AI Interviewer</h2>
+                <p>Company-specific prep, full interview pipeline, and emotion-aware feedback so you know exactly where
+                    to improve.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card reveal-on-scroll delay-100">
+                    <div class="feature-icon"><i data-lucide="building-2"></i></div>
+                    <h3 class="feature-title">Company-specific prep</h3>
+                    <p class="feature-description">Select your target company and practice with interviews tailored to
+                        their style—technical, team lead, and HR.</p>
+                </div>
+                <div class="feature-card reveal-on-scroll delay-200">
+                    <div class="feature-icon"><i data-lucide="users"></i></div>
+                    <h3 class="feature-title">Technical, Team Lead & HR</h3>
+                    <p class="feature-description">Run the full pipeline: technical rounds, team lead discussions, and
+                        HR interviews in one place.</p>
+                </div>
+                <div class="feature-card reveal-on-scroll delay-300">
+                    <div class="feature-icon"><i data-lucide="scan-face"></i></div>
+                    <h3 class="feature-title">Emotion detection</h3>
+                    <p class="feature-description">We analyze your expressions and tone during the interview so you get
+                        feedback on confidence and presence.</p>
+                </div>
+                <div class="feature-card reveal-on-scroll delay-400">
+                    <div class="feature-icon"><i data-lucide="clipboard-list"></i></div>
+                    <h3 class="feature-title">Personalized feedback</h3>
+                    <p class="feature-description">After each session, get a clear report: strengths, weaknesses, and
+                        specific improvements before the real interview.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works" class="section">
+        <div class="container">
+            <div class="section-head">
+                <h2>How it works</h2>
+                <p>Three steps from company choice to actionable feedback.</p>
+            </div>
+            <div class="steps-container">
+                <div class="step-item reveal-on-scroll delay-100">
+                    <div class="step-number">1</div>
+                    <h4>Pick your company</h4>
+                    <p>Choose the company you're preparing for. We tailor technical, team lead, and HR rounds to their
+                        style.</p>
+                </div>
+                <div class="step-item reveal-on-scroll delay-200">
+                    <div class="step-number">2</div>
+                    <h4>Run the full interview</h4>
+                    <p>Complete technical, team lead, and HR rounds with our AI. Emotion detection runs as you speak.
+                    </p>
+                </div>
+                <div class="step-item reveal-on-scroll delay-300">
+                    <div class="step-number">3</div>
+                    <h4>Get your feedback</h4>
+                    <p>Receive a clear report: strengths, weaknesses, and specific improvements to focus on.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="advantage" class="section">
+        <div class="container">
+            <div class="section-head">
+                <h2>Master the Interview with AI</h2>
+                <p>The smartest and safest way to prepare for your next big career move.</p>
+            </div>
+            <div class="advantages-grid"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <div class="feature-card reveal-left delay-100">
+                    <div class="feature-icon"><i data-lucide="shield-check"></i></div>
+                    <h3 class="feature-title">Judgment-Free Practice</h3>
+                    <p class="feature-description">Practice in a safe, private environment. Make mistakes, refine your
+                        answers, and build confidence without anyone watching.</p>
+                </div>
+                <div class="feature-card reveal-right delay-200">
+                    <div class="feature-icon"><i data-lucide="bar-chart-3"></i></div>
+                    <h3 class="feature-title">Data-Driven Insights</h3>
+                    <p class="feature-description">Go beyond "gut feelings". Get objective data on your tonality, pace,
+                        and facial expressions to see exactly how you come across.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="cta-block">
+                <h2>Ready to nail your target company interview?</h2>
+                <p>Select your company, run technical, team lead & HR rounds with emotion detection, and get feedback on
+                    strengths, weaknesses, and improvements. Free to start.</p>
+                <a href="{% url 'Signup' %}" class="btn btn-primary">Get started for free</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="{% url 'home' %}" class="logo">AI.<span>Interviewer</span></a>
+                    <p>Prepare for your target company with technical, team lead & HR mock interviews, emotion
+                        detection, and personalized feedback.</p>
+                </div>
+                <div class="footer-col">
+                    <h5>Product</h5>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#how-it-works">How it works</a></li>
+                        <li><a href="#advantage">Why AI?</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Account</h5>
+                    <ul>
+                        <li><a href="{% url 'Login' %}">Log in</a></li>
+                        <li><a href="{% url 'Signup' %}">Sign up</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{% static 'js/main.js' %}"></script>
+    <script>lucide.createIcons();</script>
+</body>
+
+</html>
